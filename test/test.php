@@ -4,4 +4,4 @@ include dirname(__FILE__) . '/../vendor/autoload.php';
 
 use Medz\Component\Filesystem\Filesystem;
 
-Filesystem::touch('test-touch.file');
+Filesystem::mirror('./1', './2');

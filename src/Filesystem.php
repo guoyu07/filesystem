@@ -34,4 +34,15 @@ class Filesystem
         return call_user_func_array(array(self::$filesystem, $name), $arguments);
     }
 
+    /**
+     * 取得文件内容
+     *
+     * @return miexd
+     * @author Seven Du <lovevipdsw@outlook.com>
+     **/
+    public static function getFileContent($filename)
+    {
+        return file_get_contents($filename);
+    }
+
 } // END class Filesystem
