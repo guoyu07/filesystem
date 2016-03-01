@@ -2,7 +2,7 @@
     "name": "medz/filesystem",
     "type": "library",
     "keywords": ["medz", "php", "filesystem"],
-    "description": "Static call function Symfony Filesystem Component.",
+    "description": "Static call function Illuminate Filesystem Component.",
     "homepage": "http://medz.cn",
     "license": "MIT",
     "authors": [
