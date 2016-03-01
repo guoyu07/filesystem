@@ -2,10 +2,10 @@
 
 namespace Medz\Component\Filesystem;
 
-use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
+use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
 /**
- * 静态方法重载Symfony\Component\Filesystem\Filesystem中的方法，使用单例。
+ * 静态方法重载Illuminate\Filesystem\Filesystem中的方法，使用单例。
  * 避免性能浪费
  *
  * @package Medz\Component\Filesystem\Filesystem
@@ -28,21 +28,10 @@ class Filesystem
      **/
     public static function __callStatic($name, array $arguments)
     {
-        if (!(self::$filesystem instanceof SymfonyFilesystem)) {
-            self::$filesystem = new SymfonyFilesystem;
+        if (!(self::$filesystem instanceof IlluminateFilesystem)) {
+            self::$filesystem = new IlluminateFilesystem;
         }
         return call_user_func_array(array(self::$filesystem, $name), $arguments);
-    }
-
-    /**
-     * 取得文件内容
-     *
-     * @return miexd
-     * @author Seven Du <lovevipdsw@outlook.com>
-     **/
-    public static function getFileContent($filename)
-    {
-        return file_get_contents($filename);
     }
 
 } // END class Filesystem

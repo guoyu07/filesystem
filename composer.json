@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.3.9",
-        "symfony/filesystem": "~2.8"
+        "illuminate/filesystem": "~4.1"
     },
     "autoload": {
         "psr-4": {
@@ -26,5 +26,10 @@
         "exclude": [
             "/test/"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
     }
 }

@@ -8,29 +8,56 @@ Filesystem provides basic utility to manipulate the file system:
 
 use Medz\Component\Filesystem\Filesystem;
 
-Filesystem::copy($originFile, $targetFile, $override = false);
+Filesystem::exists($path); // Determine if a file exists.
 
-Filesystem::mkdir($dirs, $mode = 0777);
+Filesystem::get($path); // Get the contents of a file.
 
-Filesystem::touch($files, $time = null, $atime = null);
+Filesystem::getRequire($path); // Get the returned value of a file.
 
-Filesystem::remove($files);
+Filesystem::requireOnce($file); // Require the given file once.
 
-Filesystem::exists($files);
+Filesystem::put($path, $contents, $lock = false); // Write the contents of a file.
 
-Filesystem::chmod($files, $mode, $umask = 0000, $recursive = false);
+Filesystem::prepend($path, $data); // Prepend to a file.
 
-Filesystem::chown($files, $user, $recursive = false);
+Filesystem::append($path, $data); // Append to a file.
 
-Filesystem::chgrp($files, $group, $recursive = false);
+Filesystem::delete($paths); // Delete the file at a given path.
 
-Filesystem::rename($origin, $target);
+Filesystem::move($path, $target); // Move a file to a new location.
 
-Filesystem::symlink($originDir, $targetDir, $copyOnWindows = false);
+Filesystem::copy($path, $target); // Copy a file to a new location.
 
-Filesystem::makePathRelative($endPath, $startPath);
+Filesystem::name($path); // Extract the file name from a file path.
 
-Filesystem::mirror($originDir, $targetDir, \Traversable $iterator = null, $options = array());
+Filesystem::extension($path); // Extract the file extension from a file path.
 
-Filesystem::isAbsolutePath($file);
+Filesystem::type($path); // Get the file type of a given file.
+
+Filesystem::size($path); // Get the file size of a given file.
+
+Filesystem::lastModified($path); // Get the file's last modification time.
+
+Filesystem::lisDirectory($directory); // Determine if the given path is a directory.
+
+Filesystem::isWritable($path); // Determine if the given path is writable.
+
+Filesystem::isFile($file); // Determine if the given path is a file.
+
+Filesystem::glob($pattern, $flags = 0); // Find path names matching a given pattern.
+
+Filesystem::files($directory); // Get an array of all files in a directory.
+
+Filesystem::allFiles($directory); // Get all of the files from the given directory (recursive).
+
+Filesystem::directories($directory); // Get all of the directories within a given directory.
+
+Filesystem::makeDirectory($path, $mode = 0755, $recursive = false, $force = false); // Create a directory.
+
+Filesystem::copyDirectory($directory, $destination, $options = null); // Copy a directory from one location to another.
+
+Filesystem::deleteDirectory($directory, $preserve = false); // Recursively delete a directory.
+
+Filesystem::cleanDirectory($directory); // Empty the specified directory of all files and folders.
+
 ```
