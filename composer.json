@@ -26,5 +26,10 @@
         "exclude": [
             "/test/"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "1.0-php5.3": "1.0-dev"
+        }
     }
 }
