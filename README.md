@@ -1,6 +1,6 @@
 Filesystem Component
 ====================
-|Windows:[![Build status](https://ci.appveyor.com/api/projects/status/igy293x701ej8atc?svg=true)](https://ci.appveyor.com/project/medz/filesystem)
+Windows:[![Build status](https://ci.appveyor.com/api/projects/status/igy293x701ej8atc?svg=true)](https://ci.appveyor.com/project/medz/filesystem)
 
 Filesystem provides basic utility to manipulate the file system:
 
