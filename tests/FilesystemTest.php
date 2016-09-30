@@ -2,13 +2,12 @@
 
 namespace Medz\Component\Filesystem\Tests;
 
-use PHPUnit_Framework_TestCase;
 use Medz\Component\Filesystem\Filesystem;
+use PHPUnit_Framework_TestCase;
 
 /**
- * 文件系统测试套件
+ * 文件系统测试套件.
  *
- * @package Medz\Component\Filesystem\Tests\FilesystemTest
  * @author Seven Du <lovevipdsw@outlook.com>
  **/
 class FilesystemTest extends PHPUnit_Framework_TestCase
@@ -17,7 +16,7 @@ class FilesystemTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        static::$file = __DIR__ . '/test.file';
+        static::$file = __DIR__.'/test.file';
     }
 
     public function testPut()
@@ -35,5 +34,4 @@ class FilesystemTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(true, Filesystem::delete(static::$file));
     }
-
 } // END class FilesystemTest extends PHPUnit_Framework_TestCase

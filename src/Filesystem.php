@@ -6,9 +6,8 @@ use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
 /**
  * 静态方法重载Illuminate\Filesystem\Filesystem中的方法，使用单例。
- * 避免性能浪费
+ * 避免性能浪费.
  *
- * @package Medz\Component\Filesystem\Filesystem
  * @author Seven Du <lovevipdsw@outlook.com>
  **/
 class Filesystem
@@ -21,17 +20,18 @@ class Filesystem
     protected static $filesystem;
 
     /**
-     * 工具静态方法重载文件系统方法
+     * 工具静态方法重载文件系统方法.
      *
      * @return miexd
+     *
      * @author Seven Du <lovevipdsw@outlook.com>
      **/
     public static function __callStatic($name, array $arguments)
     {
         if (!(self::$filesystem instanceof IlluminateFilesystem)) {
-            self::$filesystem = new IlluminateFilesystem;
+            self::$filesystem = new IlluminateFilesystem();
         }
-        return call_user_func_array(array(self::$filesystem, $name), $arguments);
-    }
 
+        return call_user_func_array([self::$filesystem, $name], $arguments);
+    }
 } // END class Filesystem
