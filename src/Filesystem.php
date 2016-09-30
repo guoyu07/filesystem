@@ -32,6 +32,8 @@ class Filesystem
             self::$filesystem = new IlluminateFilesystem();
         }
 
-        return call_user_func_array([self::$filesystem, $name], $arguments);
+        $call = array(self::$filesystem, $name);
+
+        return call_user_func_array($call, $arguments);
     }
 } // END class Filesystem
